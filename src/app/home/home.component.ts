@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MessageService } from '../message.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { MessageService } from '../message.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private messageService: MessageService) { }
+  constructor(private messageService: MessageService, private router: Router) { }
 
   sendMessage(): void {
       // send message to subscribers via observable subject
@@ -18,6 +19,9 @@ export class HomeComponent implements OnInit {
   clearMessage(): void {
       // clear message
       this.messageService.clearMessage();
+  }
+  gotoNext(){
+    this.router.navigate(['/dataTransfer'])
   }
   ngOnInit() {
   }

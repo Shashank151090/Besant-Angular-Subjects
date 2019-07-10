@@ -23,6 +23,9 @@ export class HomeComponent implements OnInit {
   gotoNext(){
     this.router.navigate(['/dataTransfer'])
   }
+  gotoPipes(){
+    this.router.navigate(['/pipes']);
+  }
   ngOnInit() {
   }
 

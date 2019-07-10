@@ -1,6 +1,11 @@
 <h2>Angular 6 Component Communication</h2>
-<button (click)="sendMessage()" class="btn btn-primary">Send Message</button>
-<button (click)="clearMessage()" class="btn btn-secondary">Clear Message</button>
+<button (click)="sendMessage()" style="margin: 5px" class="btn btn-primary">Send Message</button>
+<button (click)="clearMessage()" style="margin: 5px" class="btn btn-secondary">Clear Message</button>
 <div class="row">
+    <div class="col-md-6">
     <button (click)="gotoNext()" class="btn btn-success bottom">Go to Input/Output Example</button>
+</div>
+<div class="col-md-6">
+    <button (click)="gotoPipes()" class="btn btn-success bottom">Go to Custom Pipes Example</button>
+    </div>
 </div>

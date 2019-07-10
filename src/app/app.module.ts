@@ -7,6 +7,10 @@ import { HomeComponent } from './home/home.component';
 import { DataTransferComponent } from './data-transfer/data-transfer.component';
 import { ChildComponent } from './data-transfer/child/child.component';
 import { ParentComponent } from './data-transfer/parent/parent.component';
+import { CustomPipesComponent } from './custom-pipes/custom-pipes.component';
+import { MyOrderByPipe } from './sort.pipe';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -14,13 +18,16 @@ import { ParentComponent } from './data-transfer/parent/parent.component';
     HomeComponent,
     DataTransferComponent,
     ChildComponent,
-    ParentComponent
+    ParentComponent,
+    CustomPipesComponent,
+    MyOrderByPipe
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     routing
   ],
-  providers: [],
+  providers: [MyOrderByPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

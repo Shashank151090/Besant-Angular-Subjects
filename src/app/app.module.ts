@@ -10,6 +10,10 @@ import { ParentComponent } from './data-transfer/parent/parent.component';
 import { CustomPipesComponent } from './custom-pipes/custom-pipes.component';
 import { MyOrderByPipe } from './sort.pipe';
 import { FormsModule } from '@angular/forms';
+import { SubjectsComponent } from './data-transfer/subjects/subjects.component';
+import { AnimationComponent } from './animation/animation.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
@@ -20,10 +24,13 @@ import { FormsModule } from '@angular/forms';
     ChildComponent,
     ParentComponent,
     CustomPipesComponent,
-    MyOrderByPipe
+    MyOrderByPipe,
+    SubjectsComponent,
+    AnimationComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     routing
   ],

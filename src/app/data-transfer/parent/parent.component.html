@@ -5,4 +5,5 @@ It also wants to receive a response from its child.
   <b>Response from child : "{{ receivedChildMessage }}"</b>
 </p>
 <button class="btn btn-primary" (click)="sendToChild('Hello Child !')">Send to Child</button>
+<button class="btn btn-primary giveSpace" (click)="toggleChild()">{{stateToDisplay}} Child</button>
 <app-child [receivedParentMessage]="messageToSendP" (messageToEmit)="getMessage($event)"></app-child>

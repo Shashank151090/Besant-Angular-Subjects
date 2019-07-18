@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { SubjectsComponent } from './data-transfer/subjects/subjects.component';
 import { AnimationComponent } from './animation/animation.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SearchFilterComponent } from './search-filter/search-filter.component';
+import { SearchDataPipe } from './search-data.pipe';
 
 
 
@@ -26,7 +28,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CustomPipesComponent,
     MyOrderByPipe,
     SubjectsComponent,
-    AnimationComponent
+    AnimationComponent,
+    SearchFilterComponent,
+    SearchDataPipe
   ],
   imports: [
     BrowserModule,

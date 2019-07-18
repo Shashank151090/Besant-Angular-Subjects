@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChildComponent } from '../child/child.component';
 
 @Component({
   selector: 'app-parent',
@@ -7,15 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
 
+  @ViewChild(ChildComponent,{static:true}) child: ChildComponent;
   receivedChildMessage: string;
   messageToSendP: string = '';
+  stateToDisplay: string = "Hide";
 
   constructor() { }
 
   ngOnInit() {
   }
 
-
+  toggleChild() {
+    this.child.toggle();
+    this.stateToDisplay = this.child.state;
+  }
 
   sendToChild(message: string) {
     this.messageToSendP = message;

@@ -19,7 +19,10 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/subjects']);
   }
   gotoAnimation(){
-    this.router.navigate(['./animation'])
+    this.router.navigate(['./animation']);
+  }
+  gotoSearchFilter(){
+    this.router.navigate(['./searchFilter']);
   }
   ngOnInit() {
   }

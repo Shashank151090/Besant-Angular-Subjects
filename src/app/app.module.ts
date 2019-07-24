@@ -22,7 +22,6 @@ import { LoginComponent } from './login/login.component';
 import { JwtInterceptor } from './helper/jwt.interceptor';
 import { ErrorInterceptor } from './helper/error.intercptor';
 import { fakeBackendProvider } from './helper/fake-backend';
-import { AdminComponent } from './admin/admin.component';
 
 
 
@@ -39,8 +38,7 @@ import { AdminComponent } from './admin/admin.component';
     AnimationComponent,
     SearchFilterComponent,
     SearchDataPipe,
-    LoginComponent,
-    AdminComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +46,7 @@ import { AdminComponent } from './admin/admin.component';
     FormsModule,
     ReactiveFormsModule,
     routing,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

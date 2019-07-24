@@ -19,8 +19,10 @@ const appRoutes: Routes = [
     { path: 'subjects', component: SubjectsComponent},
     { path: 'searchFilter', component: SearchFilterComponent},
     { path: 'login', component: LoginComponent},
-    { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], data: { roles: [Role.Admin] }},
+    { path: 'admin', loadChildren: './admin/admin.module#AdminModule'},
     
+
+
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);

@@ -1,5 +1,4 @@
 <h2>Angular 6 Concepts Examples</h2>
-
 <div class="row">
     <div class="col-md-4">
         <button (click)="gotoInputOutput()" class="btn btn-success bottom">Go to Input/Output Example</button>
@@ -19,6 +18,9 @@
         <button (click)="gotoSearchFilter()" class="btn btn-success bottom">Go to Search Filter Example</button>
     </div>
     <div class="col-md-4">
-        <!-- <button (click)="gotoPipes()" class="btn btn-success bottom">Go to Custom Pipes Example</button> -->
+        <button (click)="gotoRoles()" class="btn btn-success bottom" *ngIf="isAdmin">Go to Role Based Example</button>
     </div>
+</div>
+<div class="row logout">
+    <button (click)="logout()" class="btn btn-danger">Logout</button>
 </div>

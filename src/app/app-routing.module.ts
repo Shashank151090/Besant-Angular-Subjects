@@ -6,6 +6,10 @@ import { CustomPipesComponent } from './custom-pipes/custom-pipes.component';
 import { SubjectsComponent } from './data-transfer/subjects/subjects.component';
 import { AnimationComponent } from './animation/animation.component';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
+import { AuthGuard } from './guards/auth.guard';
+import { Role } from './models/role';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -13,10 +17,10 @@ const appRoutes: Routes = [
     { path: 'pipes', component: CustomPipesComponent},
     { path: 'animation', component: AnimationComponent},
     { path: 'subjects', component: SubjectsComponent},
-    { path: 'searchFilter', component: SearchFilterComponent}
+    { path: 'searchFilter', component: SearchFilterComponent},
+    { path: 'login', component: LoginComponent},
+    { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], data: { roles: [Role.Admin] }},
     
-
-
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);

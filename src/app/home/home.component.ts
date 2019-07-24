@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '../services';
+import { User } from '../models/user';
+import { Role } from '../models/role';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +11,26 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  currentUser: User;
+  
+  constructor(private router: Router, private authenticationService: AuthenticationService) { 
+    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+  }
+  get isAdmin() {
+    return this.currentUser && this.currentUser.role === Role.Admin;
+  }
+  logout(){
+    this.authenticationService.logout();
+    this.router.navigate(['/login']);
+  }
   gotoInputOutput(){
     this.router.navigate(['/dataTransfer'])
   }
   gotoPipes(){
     this.router.navigate(['/pipes']);
+  }
+  gotoRoles(){
+    this.router.navigate(['/admin']);
   }
   gotoSubjects(){
     this.router.navigate(['/subjects']);
